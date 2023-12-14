@@ -4,7 +4,7 @@ using BookStore.DL.Repository;
 
 namespace BookStore.DL.interfaces
 {
-    public interface BookRepositori 
+    public interface IBookRepository 
     {
 
         public void AddBook(Book book);

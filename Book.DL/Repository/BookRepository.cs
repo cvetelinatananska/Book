@@ -1,9 +1,10 @@
 ﻿using Book2023.DL.Memori.DL;
 using Book2023.Models.models;
+using BookStore.DL.interfaces;
 
 namespace BookStore.DL.Repository
 {
-    public class BookRepository
+    public class BookRepository : IBookRepository
     {
         public void AddBook(Book book)
         {

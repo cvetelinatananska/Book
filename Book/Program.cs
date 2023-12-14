@@ -1,3 +1,6 @@
+using BookStore.BL.Interfacces;
+using BookStore.BL.Services;
+using BookStore.DL.interfaces;
 using BookStore.DL.Repository;
 
 namespace Book2023
@@ -10,11 +13,13 @@ namespace Book2023
 
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            builder.Services.AddSingleton<IBookRepository, BookRepository>();
+            builder.Services.AddSingleton<IBookServicces, BookService>();
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddSingleton<BookRepository, BookRepository>();
+            builder.Services.AddSingleton<BookStore.DL.Repository.BookRepository, BookStore.DL.Repository.BookRepository>();
 
             var app = builder.Build();
 
